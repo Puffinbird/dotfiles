@@ -11,8 +11,10 @@ if [ -f starship.toml ]; then
     cp starship.toml ~/.config/starship.toml
 fi
 
-# Lägg till Starship-init i ~/.bashrc för Bash
-echo 'eval "$(starship init bash)"' >> ~/.bashrc
+# Kopiera .bashrc till användarens hemkatalog om den finns i arkivet
+if [ -f .bashrc ]; then
+    cp .bashrc ~/.bashrc
+fi
 
 # Lägg till ett meddelande för att verifiera att .bashrc laddas
 echo 'echo "Dotfiles loaded"' >> ~/.bashrc

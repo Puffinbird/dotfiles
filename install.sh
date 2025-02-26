@@ -6,6 +6,8 @@ curl -sS https://starship.rs/install.sh | sh -s -- -y
 # Skapa ~/.config-katalog om den inte finns
 mkdir -p ~/.config
 
+echo 'if [ -f ~/.bashrc ]; then . ~/.bashrc; fi' >> ~/.profile
+
 # Kopiera starship.toml till ~/.config/ om den finns i arkivet
 if [ -f starship.toml ]; then
     cp starship.toml ~/.config/starship.toml
